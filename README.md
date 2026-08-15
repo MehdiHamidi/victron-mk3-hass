@@ -30,7 +30,7 @@ The front panel switch and other inputs on the device may override the remote pa
 
 The device retains the remote panel switch state and current limit set by the MK3 interface even after it has been disconnected from VE.Bus until the device goes to sleep (assuming it is not on standby). To restore the device to its default behavior, set the remote panel mode to `on` and set the current limit to its maximum.
 
-Refer to the [victron-mk3 library](https://github.com/j9brown/victron-mk3) for the list of supported devices.
+Refer to the [victron-mk3 library](https://github.com/MehdiHamidi/victron-mk3) for the list of supported devices.
 
 ## Entities
 
@@ -153,7 +153,7 @@ Here are some things to try if the MK3 interface appears to be having difficulti
 
 ## Manual
 
-1. Clone the repository to your machine and copy the contents of custom_components/ to your config directory.
+1. Clone the [MehdiHamidi/victron-mk3-hass repository](https://github.com/MehdiHamidi/victron-mk3-hass) to your machine and copy the contents of custom_components/ to your config directory.
 2. Restart Home Assistant.
 3. Plug in the Victron MK3 interface.
 4. Setup integration via the integration page.
@@ -161,7 +161,7 @@ Here are some things to try if the MK3 interface appears to be having difficulti
 ## HACS
 
 1. Add the integration through this link:
-   [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=j9brown&repository=victron-mk3-hass&category=integration)
+   [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=MehdiHamidi&repository=victron-mk3-hass&category=integration)
 2. Restart Home Assistant.
 3. Plug in the Victron MK3 interface.
 4. Setup integration via the integration page.
@@ -180,7 +180,7 @@ Here's a quick overview of some of them.
 [Victron Interface MK3-USB](https://www.victronenergy.com/accessories/interface-mk3-usb):
 
 - Actively monitor and control your device with Home Assistant using this
-  [victron-mk3-hass](https://github.com/j9brown/victron-mk3-hass) integration.
+  [victron-mk3-hass](https://github.com/MehdiHamidi/victron-mk3-hass) integration.
 - Can set the operating mode and current limit and keep the device in standby.
 - Configure your device over USB from a computer running [VictronConnect](https://www.victronenergy.com/victronconnectapp/victronconnect/downloads).
 
