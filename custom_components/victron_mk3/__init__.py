@@ -12,6 +12,7 @@ from homeassistant.const import (
     CONF_MODE,
     CONF_MODEL,
     CONF_PORT,
+    PERCENTAGE,
 )
 from homeassistant.core import HomeAssistant, ServiceCall
 from homeassistant.exceptions import HomeAssistantError
@@ -34,6 +35,7 @@ from victron_mk3 import (
     LEDResponse,
     PowerResponse,
     Response,
+    StateOfChargeResponse,
     SwitchRegister,
     SwitchState,
     VersionResponse,
@@ -99,6 +101,7 @@ class Data:
         self.dc: DCResponse | None = None
         self.led: LEDResponse | None = None
         self.power: PowerResponse | None = None
+        self.state_of_charge: StateOfChargeResponse | None = None
         self.version: VersionResponse | None = None
 
     def front_panel_mode(self) -> Mode | None:
@@ -202,6 +205,7 @@ class Controller(Handler):
                 else None
             )
         data.power = await self._mk3.send_power_request()
+        data.state_of_charge = await self._mk3.send_state_of_charge_request()
         data.config = await self._mk3.send_config_request()
         return data
 

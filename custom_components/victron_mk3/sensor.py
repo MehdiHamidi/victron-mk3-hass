@@ -10,6 +10,7 @@ from homeassistant.components.sensor import (
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import (
     EntityCategory,
+    PERCENTAGE,
     UnitOfElectricCurrent,
     UnitOfFrequency,
     UnitOfElectricPotential,
@@ -210,6 +211,17 @@ ENTITY_DESCRIPTIONS: tuple[VictronMK3SensorEntityDescription, ...] = (
         value_fn=lambda data: None
         if data.dc is None
         else data.dc.dc_current_to_inverter,
+    ),
+    VictronMK3SensorEntityDescription(
+        key="battery_state_of_charge",
+        name="Battery State of Charge",
+        device_class=SensorDeviceClass.BATTERY,
+        state_class=SensorStateClass.MEASUREMENT,
+        native_unit_of_measurement=PERCENTAGE,
+        suggested_display_precision=1,
+        value_fn=lambda data: None
+        if data.state_of_charge is None
+        else data.state_of_charge.state_of_charge,
     ),
     VictronMK3SensorEntityDescription(
         key="device_state",

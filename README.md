@@ -54,6 +54,12 @@ you need (such as AC Input Voltage L2) because they are disabled by default.
 - Battery Input Current
 - Battery Output Current
 - Battery Power
+- Battery State of Charge
+
+Battery State of Charge is the VE.Bus SoC calculated by the Multi/Quattro's
+internal battery monitor. It is only available when the connected device
+supports and provides RAM variable 13; a SmartShunt or BMV must be read by its
+own integration.
 
 ### Configuration entities
 
